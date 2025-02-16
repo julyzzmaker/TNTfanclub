@@ -1,0 +1,84 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浪漫求婚</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4e9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #9b59b6;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 30px;
+        }
+
+        button {
+            padding: 20px 40px;
+            font-size: 24px;
+            background-color: #9b59b6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #8e44ad;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>你愿意嫁给我吗？</h1>
+    <div class="buttons">
+        <button id="acceptButton">愿意</button>
+        <button id="veryAcceptButton">非常愿意</button>
+    </div>
+
+    <script>
+        const acceptButton = document.getElementById('acceptButton');
+        const veryAcceptButton = document.getElementById('veryAcceptButton');
+
+        // 封装修改按钮样式的函数
+        function changeButtonStyle(clickedButton, otherButton) {
+            // 大幅增大点击按钮的尺寸
+            clickedButton.style.fontSize = '50px';
+            clickedButton.style.padding = '50px 100px';
+            // 隐藏另一个按钮
+            otherButton.style.display = 'none';
+        }
+
+        acceptButton.addEventListener('click', function () {
+            changeButtonStyle(this, veryAcceptButton);
+            alert('哇塞！你太有品味了！');
+        });
+
+        veryAcceptButton.addEventListener('click', function () {
+            changeButtonStyle(this, acceptButton);
+            alert('那就这么说定啦，老婆大人！');
+        });
+    </script>
+</body>
+
+</html>
